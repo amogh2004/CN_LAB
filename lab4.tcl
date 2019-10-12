@@ -9,18 +9,18 @@ $topo load_flatgrid 1000 1000
 set nf [open lab4.nam w]
 $ns namtrace-all-wireless $nf 1000 1000
 
-$ns node-config -adhocRouting DSDV \
- -llType LL \
- -macType Mac\802_11 \
- -ifqType Queue/DropTail \
- -ifqLen 50 \
- -phyType Phy/WirelessPhy \
- -channelType Channel/WirelessChannel \ 
- -propType Propagation/TwoRayGround \
- -antType Antenna/OmniAntenna \
- -topoInstance $topo \
- -agentTrace ON \
- -routerTrace ON
+$ns node-config -adhocRouting DSDV \ 
+-llType LL \
+-macType Mac/802_11 \ 
+-ifqType Queue/DropTail \ 
+-ifqLen 50 \
+-phyType Phy/WirelessPhy 
+-channelType Channel/WirelessChannel \
+-propType Propagation/TwoRayGround \
+-antType Antenna/OmniAntenna \
+-topoInstance $topo \ 
+-agentTrace ON \
+-routerTrace ON
 
 create-god 3
 
